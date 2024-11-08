@@ -8,14 +8,15 @@ pipeline {
                 git 'https://github.com/CallMeNaul/ThreadditDeployment.git'
             }
         }
-    }
-    stage('Run Docker Compose') {
+        stage('Run Docker Compose') {
             steps {
                 script {
                     sh 'docker-compose -f docker-compose.yml up -d'
                 }
             }
         }
+    }
+    
 
     post {
         success {
